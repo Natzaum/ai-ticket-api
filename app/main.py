@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from schemas import TicketRequest, TicketResponse
-from services.classifier import classify_ticket_mock
+from services.classifier import classifier
 
 app = FastAPI()
 
@@ -9,5 +9,5 @@ def read_root():
   return {"API": "Alive"}
 
 @app.post("/tickets/classify", response_model=TicketResponse)
-def classify_ticket(ticket: TicketRequest):
-  return classify_ticket_mock(ticket.description)
+def classify(ticket: TicketRequest):
+  return classifier.classify(ticket.description)
