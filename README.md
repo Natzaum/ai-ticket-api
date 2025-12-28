@@ -20,3 +20,10 @@ A REST API that validates and analyzes support ticket descriptions, automaticall
 - Docker
 - Pytest
 - Pydantic
+- pandas
+
+## Reload API
+
+```
+uvicorn main:app --reload
+```
