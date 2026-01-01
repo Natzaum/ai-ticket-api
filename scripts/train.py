@@ -16,12 +16,12 @@ def train_models():
   df = pd.read_csv(DATA_PATH)
 
   category_pipeline = Pipeline([
-      ('vectorizer', TfidfVectorizer()),
+      ('vectorizer', TfidfVectorizer(stop_words='english')),
       ('classifier', MultinomialNB())
   ])
 
   priority_pipeline = Pipeline([
-      ('vectorizer', TfidfVectorizer()),
+      ('vectorizer', TfidfVectorizer(stop_words='english')),
       ('classifier', MultinomialNB())
   ])
 

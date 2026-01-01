@@ -7,10 +7,10 @@ id,description,category,priority
 6,"Refund request for cancelled service",billing,medium
 7,"Minor typo on the homepage footer",technical,low
 8,"Need to update my billing address",account,low
-9,"Critical bug:  data loss when saving forms",technical,high
+9,"Critical bug: data loss when saving forms",technical,high
 10,"Invoice for last month is missing",billing,medium
 11,"account locked after multiple login attempts",account,high
-12,"Suggestion:  add export to PDF functionality",feature request,low
+12,"Suggestion: add export to PDF functionality",feature request,low
 13,"Error 500 when accessing reports page",technical,medium
 14,"Upgrade my subscription plan",billing,medium
 15,"Reset my two-factor authentication",account,medium
@@ -24,3 +24,28 @@ id,description,category,priority
 23,"Improve search functionality",feature request,medium
 24,"API returning incorrect data",technical,high
 25,"Double charged for annual plan",billing,high
+26,"I need more options on your API",feature request,medium
+27,"Please add more filters to the report page",feature request,low
+28,"Can we get an endpoint to list all users?",feature request,medium
+29,"The API documentation is missing examples",technical,low
+30,"I want to integrate with Google Sheets",feature request,medium
+31,"System is throwing 404 error on profile page",technical,high
+32,"Where can I download my invoice history?",billing,low
+33,"Change my credit card information",billing,high
+34,"User permission settings are not saving",technical,high
+35,"Would be nice to have a mobile app",feature request,low
+36,"The API is responding too slowly",technical,medium
+37,"We need higher rate limits on the API",feature request,medium
+38,"My account was suspended without reason",account,high
+39,"Delete my account permanently",account,high
+40,"Add support for dark theme on mobile",feature request,low
+41,"Export button is not working",technical,high
+42,"Can you add a way to bulk import users?",feature request,high
+43,"Billing dashboard is showing wrong total",billing,high
+44,"Login page is redirecting to error page",technical,high
+45,"I want to change my username",account,low
+46,"Feature request: Add multi-language support",feature request,medium
+47,"The graph on the analytics page is broken",technical,medium
+48,"How do I upgrade to the pro plan?",billing,medium
+49,"API authentication is failing with valid key",technical,high
+50,"Please add a dark mode toggle",feature request,low
