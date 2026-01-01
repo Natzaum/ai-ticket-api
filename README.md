@@ -10,7 +10,7 @@ A REST API that validates and analyzes support ticket descriptions, automaticall
 - **Uvicorn**
 
 ### AI / Machine Learning
-- **scikit-learn**
+- **Scikit-learn**
 - **TF-IDF Vectorizer**
 - **Multinomial Naive Bayes**
 - **Pandas**
