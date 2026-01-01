@@ -5,7 +5,7 @@ A REST API that validates and analyzes support ticket descriptions, automaticall
 ## Tools and Technologies
 
 ### Backend/API
-- **Python 3.12**
+- **Python 3.14**
 - **FastAPI**
 - **Uvicorn**
 
