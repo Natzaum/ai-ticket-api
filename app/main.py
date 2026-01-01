@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from schemas import TicketRequest, TicketResponse
-from services.classifier import classifier
+from services.ml_service import ml_service
 
 app = FastAPI()
 
@@ -10,4 +10,10 @@ def read_root():
 
 @app.post("/tickets/classify", response_model=TicketResponse)
 def classify(ticket: TicketRequest):
-  return classifier.classify(ticket.description)
+  result = ml_service.predict(ticket.description)
+  
+  return TicketResponse(
+    category=result["category"],
+    priority=result["priority"],
+    confidence=result["confidence"]
+  )

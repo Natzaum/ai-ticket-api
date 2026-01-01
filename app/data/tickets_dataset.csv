@@ -1,26 +1,26 @@
 id,description,category,priority
-1,"Server is completely down and users cannot access the application",Technical,High
-2,"I was charged twice for my subscription this month",Billing,High
-3,"Cannot login to my account, password reset not working",Account,High
-4,"Add dark mode feature to the dashboard",Feature Request,Low
-5,"Application crashes when uploading large files",Technical,High
-6,"Refund request for cancelled service",Billing,Medium
-7,"Minor typo on the homepage footer",Technical,Low
-8,"Need to update my billing address",Account,Low
-9,"Critical bug:  data loss when saving forms",Technical,High
-10,"Invoice for last month is missing",Billing,Medium
-11,"Account locked after multiple login attempts",Account,High
-12,"Suggestion:  add export to PDF functionality",Feature Request,Low
-13,"Error 500 when accessing reports page",Technical,Medium
-14,"Upgrade my subscription plan",Billing,Medium
-15,"Reset my two-factor authentication",Account,Medium
-16,"Page loads slowly on mobile devices",Technical,Medium
-17,"Payment method declined, need help",Billing,High
-18,"Change email address on account",Account,Low
-19,"Add integration with Slack",Feature Request,Medium
-20,"Database connection timeout errors",Technical,High
-21,"Cancel my subscription",Billing,Low
-22,"Forgot username, how to recover",Account,Medium
-23,"Improve search functionality",Feature Request,Medium
-24,"API returning incorrect data",Technical,High
-25,"Double charged for annual plan",Billing,High
+1,"Server is completely down and users cannot access the application",technical,high
+2,"I was charged twice for my subscription this month",billing,high
+3,"Cannot login to my account, password reset not working",account,high
+4,"Add dark mode feature to the dashboard",feature request,low
+5,"Application crashes when uploading large files",technical,high
+6,"Refund request for cancelled service",billing,medium
+7,"Minor typo on the homepage footer",technical,low
+8,"Need to update my billing address",account,low
+9,"Critical bug:  data loss when saving forms",technical,high
+10,"Invoice for last month is missing",billing,medium
+11,"account locked after multiple login attempts",account,high
+12,"Suggestion:  add export to PDF functionality",feature request,low
+13,"Error 500 when accessing reports page",technical,medium
+14,"Upgrade my subscription plan",billing,medium
+15,"Reset my two-factor authentication",account,medium
+16,"Page loads slowly on mobile devices",technical,medium
+17,"Payment method declined, need help",billing,high
+18,"Change email address on account",account,low
+19,"Add integration with Slack",feature request,medium
+20,"Database connection timeout errors",technical,high
+21,"Cancel my subscription",billing,low
+22,"Forgot username, how to recover",account,medium
+23,"Improve search functionality",feature request,medium
+24,"API returning incorrect data",technical,high
+25,"Double charged for annual plan",billing,high
