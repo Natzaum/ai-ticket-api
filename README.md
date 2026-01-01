@@ -1,30 +1,40 @@
-# ai-ticket-api
+# AI Ticket API
 
-A REST API that validates and analyzes support ticket descriptions, automatically classifying them into predefined categories (billing, technical, account, or other) and estimating their priority level (low, medium, or high) using artificial intelligence.
+A REST API that validates and analyzes support ticket descriptions, automatically classifying them into predefined categories (billing, technical, account...) and estimating their priority level (low, medium, or high) using artificial intelligence.
 
-# Tools and technologies
+## Tools and Technologies
 
-## Backend/API
+### Backend/API
+- **Python 3.12** (or your actual version)
+- **FastAPI** (High-performance web framework)
+- **Uvicorn** (ASGI Server)
 
-- Python 3.14
-- FastAPI
-- Uvicorn
+### AI / Machine Learning
+- **scikit-learn**
+- **TF-IDF Vectorizer** (Text processing)
+- **Multinomial Naive Bayes** (Classification Algorithm)
+- **Pandas** (Data manipulation)
+- **Joblib** (Model serialization)
 
-## AI/Machine-lerning
-- scikit-learn
-- TF-IDF Vectorizer
-- Logistic Regression
+### Dev & Ops Tools
+- **Git + GitHub**
+- **Pydantic** (Data validation)
 
-## Dev & Ops Tools
-- Git + GitHub
-- Docker
-- Pytest
-- Pydantic
-- Pandas
-- Joblit
+## How to Run
 
-## Reload API
-
+### 1. Install Dependencies
+```bash
+pip install -r requirements.txt
 ```
+### 2. Train the Model
+Before running the API, generate the AI models:
+```bash
+python scripts/train.py
+```
+### 3. Start the API
+```
+cd app
 uvicorn main:app --reload
 ```
+
+Use postman or http://127.0.0.1:8000/docs
