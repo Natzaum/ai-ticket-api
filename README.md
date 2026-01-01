@@ -5,20 +5,20 @@ A REST API that validates and analyzes support ticket descriptions, automaticall
 ## Tools and Technologies
 
 ### Backend/API
-- **Python 3.12** (or your actual version)
-- **FastAPI** (High-performance web framework)
-- **Uvicorn** (ASGI Server)
+- **Python 3.12**
+- **FastAPI**
+- **Uvicorn**
 
 ### AI / Machine Learning
 - **scikit-learn**
-- **TF-IDF Vectorizer** (Text processing)
-- **Multinomial Naive Bayes** (Classification Algorithm)
-- **Pandas** (Data manipulation)
-- **Joblib** (Model serialization)
+- **TF-IDF Vectorizer**
+- **Multinomial Naive Bayes**
+- **Pandas**
+- **Joblib**
 
 ### Dev & Ops Tools
 - **Git + GitHub**
-- **Pydantic** (Data validation)
+- **Pydantic**
 
 ## How to Run
 
