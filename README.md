@@ -20,7 +20,8 @@ A REST API that validates and analyzes support ticket descriptions, automaticall
 - Docker
 - Pytest
 - Pydantic
-- pandas
+- Pandas
+- Joblit
 
 ## Reload API
 
