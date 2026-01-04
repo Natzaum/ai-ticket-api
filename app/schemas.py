@@ -1,8 +1,8 @@
 from typing import Literal
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, field_validator
 
 class TicketRequest(BaseModel):
-  description: str = Field(..., min_length=10, max_length=1500, description="The ticket description must be between 10 and 1500 characters")  
+  description: str
 
   @field_validator('description')
   @classmethod
