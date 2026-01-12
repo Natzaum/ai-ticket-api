@@ -6,7 +6,7 @@ from handlers import validation_exception_handler
 
 app = FastAPI(title="AI Ticket Classifier API")
 
-app.add_exception_handler(RequestValidationError, validation_exception_handler)
+app.add_exception_handler(RequestValidationError, validation_exception_handler)  # type: ignore
 
 
 @app.get("/")
