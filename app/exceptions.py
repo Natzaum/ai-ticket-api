@@ -3,3 +3,9 @@ class TicketAPIException(Exception):
         self.message = message
         self.status_code = status_code
         super().__init__(self.message)
+
+
+class TicketClassificationError(Exception):
+    def __init__(self, message: str = "Failed to classify ticket"):
+        self.message = message
+        super().__init__(self.message)

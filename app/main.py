@@ -17,9 +17,9 @@ def read_root():
 @app.post("/tickets/classify", response_model=TicketResponse)
 def classify(ticket: TicketRequest):
     result = ml_service.predict(ticket.description)
-    
+
     return TicketResponse(
         category=result["category"],
         priority=result["priority"],
-        confidence=result["confidence"]
+        confidence=result["confidence"],
     )

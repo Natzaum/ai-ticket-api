@@ -9,6 +9,6 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
         content={
             "error": "Validation Error",
             "message": "Please check your input",
-            "status_code": 422
-        }
+            "status_code": 422,
+        },
     )
