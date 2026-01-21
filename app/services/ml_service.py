@@ -1,5 +1,7 @@
 import joblib
 from pathlib import Path
+from exceptions import TicketClassificationError
+
 
 
 class MLService:
@@ -23,12 +25,14 @@ class MLService:
                 self.model_priority = joblib.load(prio_path)
                 return True
             except Exception:
-                return False
-        return False
+                raise TicketClassificationError("Failed to load ML models")
 
     def predict(self, text: str):
+        if not text or not text.strip():
+            raise TicketClassificationError("Ticket description is empty")
+
         if not self.model_category or not self.model_priority:
-            return {"category": "other", "priority": "medium", "confidence": 0.0}
+            raise TicketClassificationError("ML models are not loaded")
 
         try:
             category = self.model_category.predict([text])[0]
@@ -45,7 +49,6 @@ class MLService:
                 "confidence": round(float(avg_confidence), 2),
             }
         except Exception:
-            return {"category": "other", "priority": "medium", "confidence": 0.0}
-
+            raise TicketClassificationError("Error during ticket classification")
 
 ml_service = MLService()
