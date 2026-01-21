@@ -3,6 +3,7 @@ from pathlib import Path
 from exceptions import TicketClassificationError
 
 
+
 class MLService:
     def __init__(self):
         current_file_path = Path(__file__).resolve()
@@ -49,6 +50,5 @@ class MLService:
             }
         except Exception:
             raise TicketClassificationError("Error during ticket classification")
-
 
 ml_service = MLService()
