@@ -4,3 +4,5 @@ pydantic
 pandas
 joblib
 scikit-learn
+SQLAlchemy
+alembic psycopg[binary]
