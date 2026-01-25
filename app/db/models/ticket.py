@@ -1,4 +1,5 @@
-from base import BaseModel
+from app.db.base import BaseModel
+from datetime import datetime
 from sqlalchemy import String, Float, DateTime
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -10,4 +11,4 @@ class TicketModel(BaseModel):
     category: Mapped[str] = mapped_column(String(30))
     priority: Mapped[str] = mapped_column(String(30))
     confidence: Mapped[float] = mapped_column(Float)
-    created_at: Mapped = mapped_column(DateTime(timezone=True))
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
