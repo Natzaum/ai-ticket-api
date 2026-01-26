@@ -5,4 +5,5 @@ pandas
 joblib
 scikit-learn
 SQLAlchemy
-alembic psycopg[binary]
+alembic
+psycopg[binary]

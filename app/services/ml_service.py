@@ -1,6 +1,6 @@
 import joblib
 from pathlib import Path
-from exceptions import TicketClassificationError
+from app.exceptions import TicketClassificationError
 
 
 
