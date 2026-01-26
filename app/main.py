@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
-from schemas import TicketRequest, TicketResponse
-from services.ml_service import ml_service
-from handlers import validation_exception_handler
+from app.schemas import TicketRequest, TicketResponse
+from app.services.ml_service import ml_service
+from app.handlers import validation_exception_handler
 
 app = FastAPI(title="AI Ticket Classifier API")
 
