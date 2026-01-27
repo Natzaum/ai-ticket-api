@@ -1,4 +1,4 @@
-from app.db.base import BaseModel
+from app.db.models.base import BaseModel
 from datetime import datetime
 from sqlalchemy import String, Float, DateTime
 from sqlalchemy.orm import Mapped, mapped_column
