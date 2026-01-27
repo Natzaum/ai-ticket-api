@@ -4,7 +4,7 @@ from unittest.mock import MagicMock, Mock
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from app.services.ml_service import MLService
+from app.services.ticket_classifier import MLService
 
 
 def test_predict_with_loaded_models():
