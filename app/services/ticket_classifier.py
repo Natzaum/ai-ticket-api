@@ -3,8 +3,7 @@ from pathlib import Path
 from app.core.exceptions import TicketClassificationError
 
 
-
-class MLService:
+class Classify:
     def __init__(self):
         current_file_path = Path(__file__).resolve()
         project_root = current_file_path.parent.parent.parent
@@ -51,4 +50,5 @@ class MLService:
         except Exception:
             raise TicketClassificationError("Error during ticket classification")
 
-ml_service = MLService()
+
+ticket_classifier = Classify()
