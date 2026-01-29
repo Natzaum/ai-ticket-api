@@ -1,7 +1,8 @@
-from app.db.models.base import BaseModel
 from datetime import datetime
+from app.db.models.base import BaseModel
 from sqlalchemy import String, Float, DateTime
 from sqlalchemy.orm import Mapped, mapped_column
+from app.api.v1.schemas.tickets import TicketResponse
 
 
 class TicketModel(BaseModel):
@@ -12,3 +13,6 @@ class TicketModel(BaseModel):
     priority: Mapped[str] = mapped_column(String(30))
     confidence: Mapped[float] = mapped_column(Float)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+
+
+tickets_db: list[TicketResponse] = []
