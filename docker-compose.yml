@@ -12,7 +12,7 @@ services:
       DATABASE_URL: postgresql+psycopg://user:password@db:5432/tickets_db
     volumes:
       - .:/app
-    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload --reload-dir /app --reload-delay 0.2
 
   db:
     image: postgres:16

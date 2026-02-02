@@ -1,4 +1,7 @@
+from fastapi import Depends
 from fastapi import APIRouter
+from sqlalchemy.orm import Session
+from app.db.session import get_db
 from app.api.v1.schemas.tickets import TicketRequest
 from app.services.ticket_service import ticket_service
 
@@ -6,5 +9,5 @@ router = APIRouter(prefix="/tickets", tags=["Tickets"])
 
 
 @router.post("/classify")
-def classify(ticket: TicketRequest):
-    return ticket_service.create_and_classify(ticket)
+def classify_ticket(ticket: TicketRequest, db: Session = Depends(get_db)):
+    return ticket_service.create_and_classify(db, ticket)
