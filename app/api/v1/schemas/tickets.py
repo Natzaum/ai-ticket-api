@@ -1,4 +1,5 @@
 from typing import Literal
+from datetime import datetime
 from pydantic import BaseModel, field_validator
 
 
@@ -27,6 +28,17 @@ class TicketRequest(BaseModel):
 
 
 class TicketResponse(BaseModel):
+    id: int
+    category: Literal["billing", "technical", "account", "feature request", "other"]
+    priority: Literal["low", "medium", "high"]
+    confidence: float
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+class TicketCreateResponse(BaseModel):
     category: Literal["billing", "technical", "account", "feature request", "other"]
     priority: Literal["low", "medium", "high"]
     confidence: float

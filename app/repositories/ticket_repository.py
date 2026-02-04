@@ -10,7 +10,7 @@ class TicketRepository:
         return ticket
 
     def list_all(self, db: Session):
-        return db
+        return db.query(TicketModel).all()
 
 
 ticket_repository = TicketRepository()
