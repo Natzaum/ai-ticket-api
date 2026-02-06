@@ -29,6 +29,7 @@ class TicketRequest(BaseModel):
 
 class TicketResponse(BaseModel):
     id: int
+    description: str
     category: Literal["billing", "technical", "account", "feature request", "other"]
     priority: Literal["low", "medium", "high"]
     confidence: float
@@ -39,6 +40,7 @@ class TicketResponse(BaseModel):
 
 
 class TicketCreateResponse(BaseModel):
+    description: str
     category: Literal["billing", "technical", "account", "feature request", "other"]
     priority: Literal["low", "medium", "high"]
     confidence: float

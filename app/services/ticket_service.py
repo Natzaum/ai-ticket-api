@@ -12,6 +12,7 @@ class TicketService:
         result = ticket_classifier.predict(ticket.description)
 
         ticket_model = TicketModel(
+            description=ticket.description,
             category=result["category"],
             priority=result["priority"],
             confidence=result["confidence"],
@@ -19,6 +20,7 @@ class TicketService:
         ticket_repository.save(db, ticket_model)
 
         return TicketCreateResponse(
+            description=ticket_model.description,
             category=ticket_model.category,  # type: ignore
             priority=ticket_model.priority,  # type: ignore
             confidence=ticket_model.confidence,

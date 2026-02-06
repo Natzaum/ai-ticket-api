@@ -1,7 +1,7 @@
 from datetime import datetime
 from sqlalchemy.sql import func
 from app.db.base import BaseModel
-from sqlalchemy import String, Float, DateTime
+from sqlalchemy import String, Float, DateTime, Text
 from sqlalchemy.orm import Mapped, mapped_column
 
 
@@ -9,6 +9,7 @@ class TicketModel(BaseModel):
     __tablename__ = "tickets"
 
     id: Mapped[int] = mapped_column(primary_key=True)
+    description: Mapped[str] = mapped_column(Text, nullable=False)
     category: Mapped[str] = mapped_column(String(30), nullable=False)
     priority: Mapped[str] = mapped_column(String(30), nullable=False)
     confidence: Mapped[float] = mapped_column(Float, nullable=False)
