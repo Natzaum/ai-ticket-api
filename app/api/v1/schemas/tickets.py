@@ -1,33 +1,13 @@
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel
 
 
 class TicketRequest(BaseModel):
     description: str
 
-    @field_validator("description")
-    @classmethod
-    def validate_description(cls, value):
-        value = value.strip()
 
-        if not value:
-            raise ValueError("Description cannot be empty or contain only whitespace")
-
-        if len(value) < 10:
-            raise ValueError(
-                f"Description is too short ({len(value)} characters). Minimum is 10 characters."
-            )
-
-        if len(value) > 1500:
-            raise ValueError(
-                f"Description is too long ({len(value)} characters). Maximum is 1500 characters."
-            )
-
-        return value
-
-
-class TicketResponse(BaseModel):
+class TicketOut(BaseModel):
     id: int
     description: str
     category: Literal["billing", "technical", "account", "feature request", "other"]
@@ -39,14 +19,13 @@ class TicketResponse(BaseModel):
         from_attributes = True
 
 
-class TicketCreateResponse(BaseModel):
-    description: str
-    category: Literal["billing", "technical", "account", "feature request", "other"]
-    priority: Literal["low", "medium", "high"]
-    confidence: float
+class TicketCreateResponse(TicketOut):
+    pass
 
 
-class ErrorResponse(BaseModel):
-    error: str
-    detail: str
-    status_code: int
+class TicketListResponse(TicketOut):
+    pass
+
+
+class TicketDetailResponse(TicketOut):
+    pass
