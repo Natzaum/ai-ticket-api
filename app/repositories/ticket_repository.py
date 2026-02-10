@@ -12,5 +12,8 @@ class TicketRepository:
     def list_all(self, db: Session):
         return db.query(TicketModel).all()
 
+    def list_by_id(self, db: Session, ticket_id: int):
+        return db.query(TicketModel).get(ticket_id)
+
 
 ticket_repository = TicketRepository()
