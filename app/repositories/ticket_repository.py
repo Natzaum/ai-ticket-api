@@ -1,23 +1,29 @@
 from app.db.models.ticket import TicketModel
 from sqlalchemy.orm import Session
+from sqlalchemy.sql import func
 
 
 class TicketRepository:
     def save(self, db: Session, ticket: TicketModel):
         db.add(ticket)
-        db.commit()
-        db.refresh(ticket)
+
         return ticket
 
     def list_all(self, db: Session):
-        return db.query(TicketModel).all()
+        return db.query(TicketModel).filter(TicketModel.deleted_at.is_(None)).all()
 
     def list_by_id(self, db: Session, ticket_id: int):
-        return db.query(TicketModel).get(ticket_id)
+        return (
+            db.query(TicketModel)
+            .filter(
+                TicketModel.id == ticket_id,
+                TicketModel.deleted_at.is_(None),
+            )
+            .first()
+        )
 
     def update(
         self,
-        db: Session,
         ticket: TicketModel,
         category: str,
         priority: str,
@@ -27,8 +33,10 @@ class TicketRepository:
         ticket.priority = priority
         ticket.confidence = confidence
 
-        db.commit()
-        db.refresh(ticket)
+        return ticket
+
+    def soft_delete(self, ticket: TicketModel) -> TicketModel:
+        ticket.deleted_at = func.now()
 
         return ticket
 

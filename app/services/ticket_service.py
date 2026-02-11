@@ -16,7 +16,13 @@ class TicketService:
                 priority=result["priority"],
                 confidence=result["confidence"],
             )
-            return ticket_repository.save(db, ticket_model)
+
+            ticket_repository.save(db, ticket_model)
+
+            db.commit()
+            db.refresh(ticket_model)
+
+            return ticket_model
 
         except Exception:
             db.rollback()
@@ -34,13 +40,30 @@ class TicketService:
         if ticket is None:
             return None
 
-        return ticket_repository.update(
-            db,
+        ticket_model = ticket_repository.update(
             ticket,
             category=data.category,
             priority=data.priority,
             confidence=data.confidence,
         )
+
+        db.commit()
+        db.refresh(ticket)
+
+        return ticket_model
+
+    def delete_ticket(self, db: Session, ticket_id: int):
+        ticket = ticket_repository.list_by_id(db, ticket_id)
+
+        if ticket is None:
+            return None
+
+        deleted = ticket_repository.soft_delete(ticket)
+
+        db.commit()
+        db.refresh(ticket)
+
+        return deleted
 
 
 ticket_service = TicketService()
