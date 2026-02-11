@@ -15,5 +15,22 @@ class TicketRepository:
     def list_by_id(self, db: Session, ticket_id: int):
         return db.query(TicketModel).get(ticket_id)
 
+    def update(
+        self,
+        db: Session,
+        ticket: TicketModel,
+        category: str,
+        priority: str,
+        confidence: float,
+    ) -> TicketModel:
+        ticket.category = category
+        ticket.priority = priority
+        ticket.confidence = confidence
+
+        db.commit()
+        db.refresh(ticket)
+
+        return ticket
+
 
 ticket_repository = TicketRepository()

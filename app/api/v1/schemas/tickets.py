@@ -19,6 +19,12 @@ class TicketOut(BaseModel):
         from_attributes = True
 
 
+class TicketUpdateRequest(BaseModel):
+    category: Literal["billing", "technical", "account", "feature request", "other"]
+    priority: Literal["low", "medium", "high"]
+    confidence: float
+
+
 class TicketCreateResponse(TicketOut):
     pass
 
